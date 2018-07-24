@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+app.title = '山东高考招生情况';
+
+option = {
+    title: {
+        text: '山东高考招生情况',
+        subtext: '数据来自网络'
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    legend: {
+        data: ['2011年', '2012年']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: {
+        type: 'value',
+        boundaryGap: [0, 0.01]
+    },
+    yAxis: {
+        type: 'category',
+        data:['安徽师范大学', '东北林业大学', '东北财经大学', '安徽大学', '湘潭大学', '哈尔滨医科大学', '大连海事大学', '江南大学', '上海交通大学', '华东师范大学', '上海理工大学', '西北工业大学', '太原理工大学', '广西大学', '西北师范大学', '长安大学', '江西师范大学', '南方医科大学', '重庆医科大学', '郑州大学', '北京航空航天大学', '武汉科技大学', '中国农业大学', '西北农林科技大学', '深圳大学', '华南师范大学', '海南大学', '福建农林大学', '华南农业大学', '南京航空航天大学', '山东大学', '对外经济贸易大学', '天津医科大学', '上海财经大学', '延边大学', '湖南师范大学', '湖南大学', '北京工业大学', '中国医科大学', '哈尔滨工业大学', '中南大学', '上海大学', '大连理工大学', '河南大学', '天津师范大学', '中央财经大学', '南开大学', '北京协和医学院', '辽宁大学', '华中农业大学', '东北大学', '东北师范大学', '内蒙古大学', '江苏大学', '北京科技大学', '中国传媒大学', '暨南大学', '西安交通大学', '华东理工大学', '东南大学', '厦门大学', '南京农业大学', '北京大学', '南昌大学', '山东农业大学', '浙江师范大学', '广州中医药大学', '河北大学', '贵州大学', '西藏大学', '南京理工大学', '中南财经政法大学', '中山大学', '北京化工大学', '南京师范大学', '燕山大学', '重庆大学', '东北农业大学', '北京交通大学', '河海大学', '四川农业大学', '北京外国语大学', '上海中医药大学', '云南大学', '中国药科大学', '西南交通大学', '同济大学', '北京理工大学', '河北工业大学', '苏州大学', '中国科学技术大学', '陕西师范大学', '西安建筑科技大学', '宁夏大学', '中国海洋大学', '福州大学', '北京邮电大学', '山东师范大学', '中央民族大学', '山西大学', '首都医科大学', '石河子大学', '浙江大学', '华中师范大学', '华南理工大学', '合肥工业大学', '复旦大学', '上海师范大学', '西南大学', '天津大学', '四川大学', '西南财经大学', '北京林业大学', '西北大学', '湖南农业大学', '吉林大学', '黑龙江大学', '武汉大学', '南京医科大学', '福建师范大学', '北京中医药大学', '东华大学', '新疆大学', '浙江工业大学', '南京大学', '西南政法大学', '首都师范大学', '兰州大学', '扬州大学', '电子科技大学', '西安理工大学', '华中科技大学', '湖北大学', '昆明理工大学', '哈尔滨工程大学', '中国矿业大学（北京）', '南京工业大学', '中国人民大学', '西安电子科技大学', '武汉理工大学', '清华大学', '中国政法大学']
+    },
+    series: [
+        {
+            name: '山东高考情况',
+            type: 'bar',
+            data:['3593', '2513', '1143', '3774', '1243', '1832', '1471', '2514', '210', '1045', '1739', '1040', '3496', '533', '326', '1614', '3907', '569', '436', '2276', '1321', '569', '1091', '1226', '400', '196', '2368', '350', '589', '1788', '1603', '739', '640', '801', '3348', '833', '1419', '1536', '1444', '2214', '2274', '2287', '1170', '912', '3137', '930', '1843', '60', '2615', '1253', '1281', '599', '2493', '2728', '1553', '435', '543', '926', '1876', '1632', '1768', '2179', '534', '4103', '587', '1973', '240', '4452', '389', '345', '1959', '890', '1193', '1441', '1845', '4357', '1159', '3924', '1485', '2289', '763', '322', '413', '728', '1536', '1792', '1433', '1424', '4351', '2015', '381', '289', '411', '210', '850', '2938', '1208', '569', '661', '4296', '1131', '937', '2371', '655', '836', '3187', '294', '1836', '814', '2472', '1877', '926', '1341', '655', '817', '3359', '3882', '1734', '1695', '2516', '725', '1350', '266', '2990', '1471', '756', '270', '1244', '1820', '1102', '608', '1656', '244', '919', '1922', '817', '3305', '825', '1725', '2290', '395', '798']
+        },
+       
+    ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>
